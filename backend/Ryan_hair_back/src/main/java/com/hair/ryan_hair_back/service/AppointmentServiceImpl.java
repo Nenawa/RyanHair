@@ -1,0 +1,42 @@
+package com.hair.ryan_hair_back.service;
+
+import com.hair.ryan_hair_back.model.Appointment;
+import com.hair.ryan_hair_back.repository.AppointmentRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class AppointmentServiceImpl implements AppointmentService{
+
+    private AppointmentRepository appointmentRepository;
+
+    public AppointmentServiceImpl(AppointmentRepository appointmentRepository) {
+        this.appointmentRepository = appointmentRepository;
+    }
+
+    @Override
+    public Iterable<Appointment> readHaircut() {
+        return appointmentRepository.findAll();
+    }
+
+    @Override
+    public Optional<Appointment> readOneAppointment(Long id) {
+        return appointmentRepository.findById(id);
+    }
+
+    @Override
+    public Appointment createAppointment(Appointment appointment) {
+        return appointmentRepository.save(appointment);
+    }
+
+    @Override
+    public void deleteAppointment(Long id) {
+        appointmentRepository.deleteById(id);
+    }
+
+    @Override
+    public Appointment updateAppointment(Long id, Appointment appointment) {
+        return appointmentRepository.save(appointment);
+    }
+}
