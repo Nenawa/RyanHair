@@ -26,14 +26,16 @@ public class Appointment {
     @Column(name="comment", nullable = true, columnDefinition="TEXT")
     private String comment;
 
-    @OneToOne
-    @JoinColumn(name = "id_time_slot")
-    private TimeSlot timeSlot;
+    /* commentaire des clés étrangère
 
-    @OneToOne
-    @JoinColumn(name = "id_haircut")
-    private Haircut haircut;
+        @OneToOne
+        @JoinColumn(name = "id_time_slot")
+        private TimeSlot timeSlot;
 
+        @OneToOne
+        @JoinColumn(name = "id_haircut")
+        private Haircut haircut;
+    */
     public Appointment() {
     }
 }
