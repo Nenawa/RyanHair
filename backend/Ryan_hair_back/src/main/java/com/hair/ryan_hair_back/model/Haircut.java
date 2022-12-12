@@ -12,7 +12,7 @@ public class Haircut {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="haircut_status", nullable = true)
+    @Column(name="haircut_status", nullable = false)
     @Enumerated(EnumType.STRING)
     HaircutStatus status;
     @Column(name="description", nullable = true, columnDefinition="TEXT")
