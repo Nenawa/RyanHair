@@ -1,17 +1,33 @@
 package com.hair.ryan_hair_back.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idRole;
 
     @Column
     private String name;
+
+    @ManyToMany(mappedBy = "role")
+    @JsonIgnore
+    private Set<User> users =  new HashSet<>();
+
+    public Long getIdRole() {
+        return idRole;
+    }
+
+    public void setIdRole(Long id) {
+        this.idRole = id;
+    }
 
     public String getName() {
         return name;
@@ -21,11 +37,11 @@ public class Role {
         this.name = name;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public Long getId() {
-        return id;
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
