@@ -1,5 +1,6 @@
 package com.hair.ryan_hair_back.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,7 +21,7 @@ public class Appointment {
     @Column(nullable = false, name = "telephone")
     private String telephone;
 
-    @Column(nullable = false, name = "email", unique = true)
+    @Column(nullable = false, name = "email")
     private String email;
 
     @Column(name="comment", nullable = true, columnDefinition="TEXT")
@@ -31,11 +32,14 @@ public class Appointment {
         @OneToOne
         @JoinColumn(name = "id_time_slot")
         private TimeSlot timeSlot;
-
-        @OneToOne
-        @JoinColumn(name = "id_haircut")
-        private Haircut haircut;
     */
+
+
+    @ManyToOne
+    @JoinColumn(name="id_haircut",nullable = false)
+    @JsonBackReference
+    private Haircut haircut;
+
     public Appointment() {
     }
 }

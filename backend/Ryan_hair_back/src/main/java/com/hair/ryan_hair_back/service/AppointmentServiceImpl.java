@@ -37,6 +37,14 @@ public class AppointmentServiceImpl implements AppointmentService{
 
     @Override
     public Appointment updateAppointment(Long id, Appointment appointment) {
-        return appointmentRepository.save(appointment);
+        Appointment a = readOneAppointment(id).get();
+        a.setId(id);
+        a.setFirstName(appointment.getFirstName());
+        a.setLastName(appointment.getFirstName());
+        a.setTelephone(appointment.getTelephone());
+        a.setEmail(appointment.getEmail());
+        a.setComment(appointment.getComment());
+        a.setHaircut(appointment.getHaircut());
+        return appointmentRepository.save(a);
     }
 }
