@@ -16,11 +16,6 @@ public class AppointmentServiceImpl implements AppointmentService{
     }
 
     @Override
-    public Iterable<Appointment> readHaircut() {
-        return appointmentRepository.findAll();
-    }
-
-    @Override
     public Optional<Appointment> readOneAppointment(Long id) {
         return appointmentRepository.findById(id);
     }
@@ -46,5 +41,10 @@ public class AppointmentServiceImpl implements AppointmentService{
         a.setComment(appointment.getComment());
         a.setHaircut(appointment.getHaircut());
         return appointmentRepository.save(a);
+    }
+
+    @Override
+    public Iterable<Appointment> readAppointment() {
+        return appointmentRepository.findAll();
     }
 }
