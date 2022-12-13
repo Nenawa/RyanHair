@@ -38,6 +38,10 @@ public class HaircutServiceImpl implements HaircutService{
 
     @Override
     public Haircut updateHaircut(Long id, Haircut haircut) {
-        return haircutRepository.save(haircut);
+        Haircut h = readOneHaircut(id).get();
+        h.setId(id);
+        h.setDescription(haircut.getDescription());
+        h.setStatus(haircut.getStatus());
+        return haircutRepository.save(h);
     }
 }

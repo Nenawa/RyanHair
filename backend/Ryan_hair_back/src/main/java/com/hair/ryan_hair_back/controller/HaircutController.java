@@ -37,6 +37,7 @@ public class HaircutController {
         haircutService.deleteHaircut(id);
     }
 
+    //soucis avec le put, cela fait un post
     @PutMapping("/{id}")
     public Haircut updateHaircut(@PathVariable Long id, @RequestBody Haircut haircut){
         return haircutService.updateHaircut(id, haircut);
