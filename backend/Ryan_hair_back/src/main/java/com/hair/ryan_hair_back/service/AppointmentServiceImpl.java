@@ -16,7 +16,7 @@ public class AppointmentServiceImpl implements AppointmentService{
     }
 
     @Override
-    public Optional<Appointment> readOneAppointment(Long id) {
+    public Optional<Appointment> readOneAppointment(final Long id) {
         return appointmentRepository.findById(id);
     }
 
@@ -31,7 +31,7 @@ public class AppointmentServiceImpl implements AppointmentService{
     }
 
     @Override
-    public Appointment updateAppointment(Long id, Appointment appointment) {
+    public Appointment updateAppointment(final Long id, Appointment appointment) {
         Appointment a = readOneAppointment(id).get();
         a.setId(id);
         a.setFirstName(appointment.getFirstName());
