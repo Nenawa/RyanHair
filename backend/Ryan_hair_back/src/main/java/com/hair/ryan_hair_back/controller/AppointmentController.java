@@ -2,7 +2,6 @@ package com.hair.ryan_hair_back.controller;
 
 import com.hair.ryan_hair_back.model.Appointment;
 import com.hair.ryan_hair_back.model.Haircut;
-import com.hair.ryan_hair_back.repository.HaircutRepository;
 import com.hair.ryan_hair_back.service.AppointmentService;
 import com.hair.ryan_hair_back.service.HaircutService;
 import org.springframework.web.bind.annotation.*;
@@ -100,32 +99,14 @@ public class AppointmentController {
     }
 */
 
-    /*
-    @GetMapping("/{idAppointments}/haircut/{idHaircut}")
-    public Optional<Appointment> seeAHaircut(@PathVariable("idAppointments")final Long idAppointments, @PathVariable("idHaircut")final Long idHaircut){
-
-        Optional<Appointment> appointmentOptional = appointmentService.readOneAppointment(idAppointments);
-        Optional <Haircut> haircutOptional = haircutService.readOneHaircut(idHaircut);
-
-        if (haircutOptional.isPresent() && appointmentOptional.isPresent()) {
-            Appointment appointment = appointmentOptional.get();
-            Haircut haircut = haircutOptional.get();
-            appointment.setHaircut(haircut);
-            haircut.getAppointmentList().add(appointment);
-            return appointmentService.readOneAppointment(idAppointments);
-        } else {
-            return null;
-        }
-    }
-*/
 
     @PutMapping("/{idAppointments}/haircut/{idHaircut}")
     private Appointment modifyAHaircut(@PathVariable("idAppointments") final Long idAppointments, @PathVariable("idHaircut") final Long idHaircut) {
 
         Optional<Appointment> appointmentOptional = appointmentService.readOneAppointment(idAppointments);
-        Optional <Haircut>haircutOptional = haircutService.readOneHaircut(idHaircut);
+        Optional<Haircut> haircutOptional = haircutService.readOneHaircut(idHaircut);
 
-        if (appointmentOptional.isPresent() && haircutOptional.isPresent()){
+        if (appointmentOptional.isPresent() && haircutOptional.isPresent()) {
             Appointment appointment = appointmentOptional.get();
             Haircut haircut = haircutOptional.get();
             appointment.setHaircut(haircut); // ce n'est pas une liste donc possibilité d'utiliser un setter
