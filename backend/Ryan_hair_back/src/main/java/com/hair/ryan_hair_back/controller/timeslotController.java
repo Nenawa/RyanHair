@@ -63,7 +63,7 @@ public class timeslotController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteTimeslot(@PathVariable("id") final Long id) {
         timeslotService.deleteTimeslotById(id);
-        return ResponseEntity.status(HttpStatus.OK).body("L'employé a été supprimé");
+        return ResponseEntity.status(HttpStatus.OK).body("Le créneau a été supprimé");
     }
 
 }
