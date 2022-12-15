@@ -15,7 +15,7 @@ public class Timeslot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "timeslot_id")
-    private int id;
+    private Long id;
 
     @Column(name = "slot_start")
     @Temporal(TemporalType.DATE)

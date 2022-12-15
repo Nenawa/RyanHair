@@ -2,7 +2,6 @@ package com.hair.ryan_hair_back.controller;
 
 import com.hair.ryan_hair_back.model.Timeslot;
 import com.hair.ryan_hair_back.service.TimeslotService;
-import jakarta.annotation.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +17,10 @@ public class timeslotController {
     @Autowired
     private TimeslotService timeslotService;
 
+    public void TimeslotController(TimeslotService timeslotService) {
+        this.timeslotService = timeslotService;
+    }
+
     @GetMapping()
     public ResponseEntity<Iterable<Timeslot>> getAllTimeslots() {
         return ResponseEntity.status(HttpStatus.OK).body(timeslotService.getAllTimeslots());
@@ -32,12 +35,12 @@ public class timeslotController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
-    @ResponseBody
+
     @PostMapping()
     public ResponseEntity<Timeslot> createTimeslot(@RequestBody Timeslot timeslot) {
         return ResponseEntity.status(HttpStatus.CREATED).body(timeslotService.saveOrUpdateTimeslot(timeslot));
     }
-    @ResponseBody
+
     @PutMapping("/{id}")
     public ResponseEntity<Timeslot> updateTimeslot(@PathVariable("id") final Long id, @RequestBody Timeslot timeslot) {
         Optional<Timeslot> t = timeslotService.getTimeslotById(id);
