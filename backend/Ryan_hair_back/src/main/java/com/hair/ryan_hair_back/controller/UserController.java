@@ -30,7 +30,13 @@ public class UserController {
     @PutMapping("/{id}")
     public User updateUser(@RequestBody User user, @PathVariable("id") Long id) {
         User newUser = userService.getUserById(id);
-        //newUser.setName(user.getName());
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
+        newUser.setEmail(user.getEmail());
+        newUser.setUserName(user.getUserName());
+        newUser.setPassword(user.getPassword());
+        newUser.setPhone(user.getPhone());
+        newUser.setRole(user.getRole());
         return userService.saveOrUpdate(newUser);
     }
 
