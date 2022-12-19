@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class HaircutServiceImpl implements HaircutService{
+public class HaircutServiceImpl implements HaircutService {
 
     private HaircutRepository haircutRepository;
 
@@ -27,7 +27,7 @@ public class HaircutServiceImpl implements HaircutService{
     }
 
     @Override
-    public Optional<Haircut> readOneHaircut(Long id) {
+    public Optional<Haircut> readOneHaircut(final Long id) {
         return haircutRepository.findById(id);
     }
 
@@ -37,7 +37,16 @@ public class HaircutServiceImpl implements HaircutService{
     }
 
     @Override
-    public Haircut updateHaircut(Long id, Haircut haircut) {
-        return haircutRepository.save(haircut);
+    public Haircut updateHaircut(final Long id, Haircut haircut) {
+        var h = haircutRepository.findById(id);
+        if (h.isPresent()) {
+            var courentHaircut = h.get();
+            courentHaircut.setDescription(haircut.getDescription());
+            courentHaircut.setStatus(haircut.getStatus());
+            courentHaircut.setAppointmentList(haircut.getAppointmentList());
+            return haircutRepository.save(courentHaircut);
+        } else {
+            return null;
+        }
     }
 }

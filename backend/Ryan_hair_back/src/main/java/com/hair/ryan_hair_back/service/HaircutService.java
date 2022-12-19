@@ -13,11 +13,11 @@ public interface HaircutService {
     Iterable<Haircut> readHaircut();
 
     //getById
-    Optional<Haircut> readOneHaircut(Long id);
+    Optional<Haircut> readOneHaircut(final Long id);
 
     //delete
     void deleteHaircut(Long id);
 
     //put
-    Haircut updateHaircut(Long id, Haircut haircut);
+    Haircut updateHaircut(final Long id, Haircut haircut);
 }
