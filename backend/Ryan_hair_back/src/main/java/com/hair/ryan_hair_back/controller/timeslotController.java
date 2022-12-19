@@ -7,7 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.DateFormat;
+
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -47,11 +48,11 @@ public class timeslotController {
         if (t.isPresent()) {
             Timeslot currentTimeslot = t.get();
 
-            DateFormat slotStart = timeslot.getSlotStart();
+            java.util.Date slotStart = timeslot.getSlotStart();
             if (slotStart != null) {
                 currentTimeslot.setSlotStart(slotStart);
             }
-            DateFormat slotEnd = timeslot.getSlotEnd();
+            Date slotEnd = timeslot.getSlotEnd();
             if (slotEnd != null) {
                 currentTimeslot.setSlotEnd(slotEnd);
             }

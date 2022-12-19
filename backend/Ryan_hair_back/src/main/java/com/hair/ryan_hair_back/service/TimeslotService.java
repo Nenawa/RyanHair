@@ -27,7 +27,7 @@ public class TimeslotService {
 
     public Timeslot saveOrUpdateTimeslot(Timeslot timeslot) {
         Timeslot savedTimeslot = timeslotRepository.save(timeslot);
-        return timeslotRepository.save(timeslot);
+        return savedTimeslot;
     }
 
     public void deleteTimeslotById(Long id) {

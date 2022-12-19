@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -65,7 +65,7 @@ public class ClosureController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteClosure(@PathVariable("id") final Long id) {
         closureService.deleteClosureById(id);
-        return ResponseEntity.status(HttpStatus.OK).body("La fermeture a été supprimée");
+        return ResponseEntity.status(HttpStatus.OK).body("Le creneau de fermeture exceptionnelle a été supprimé");
     }
 
 }

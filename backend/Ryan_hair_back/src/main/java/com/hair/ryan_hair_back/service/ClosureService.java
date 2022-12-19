@@ -1,9 +1,7 @@
 package com.hair.ryan_hair_back.service;
 
 import com.hair.ryan_hair_back.model.Closure;
-import com.hair.ryan_hair_back.model.Timeslot;
 import com.hair.ryan_hair_back.repository.ClosureRepository;
-import com.hair.ryan_hair_back.repository.TimeslotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +26,7 @@ public class ClosureService {
 
     public Closure saveOrUpdateClosure(Closure closure) {
         Closure savedClosure = closureRepository.save(closure);
-        return closureRepository.save(closure);
+        return savedClosure;
     }
 
     public void deleteClosureById(Long id) {
