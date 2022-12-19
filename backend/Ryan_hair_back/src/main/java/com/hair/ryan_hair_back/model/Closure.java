@@ -1,9 +1,11 @@
 package com.hair.ryan_hair_back.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @Entity
 @Data
@@ -11,15 +13,17 @@ import java.sql.Date;
 public class Closure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "closure_id")
+    @Column
     private Long id;
 
-    @Column(name = "closure_start")
+    @Column
     @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date closureStart;
 
-    @Column(name = "closure_end")
+    @Column
     @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date closureEnd;
 
     public Closure(){}
