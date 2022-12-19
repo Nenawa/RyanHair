@@ -6,13 +6,13 @@ import java.util.Optional;
 
 public interface AppointmentService {
 
-    Optional<Appointment> readOneAppointment(Long id);
+    Optional<Appointment> readOneAppointment(final Long id);
 
     Appointment createAppointment(Appointment appointment);
 
-    void deleteAppointment(Long id);
+    void deleteAppointment(final Long id);
 
-    Appointment updateAppointment(Long id, Appointment appointment);
+    Appointment updateAppointment(final Long id, Appointment appointment);
 
     Iterable<Appointment> readAppointment();
 }
