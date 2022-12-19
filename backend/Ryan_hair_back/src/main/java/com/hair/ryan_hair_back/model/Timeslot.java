@@ -28,7 +28,6 @@ public class Timeslot {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date slotEnd;
 
-    @Autowired
     public Timeslot(Long id, Date slotStart, Date slotEnd) {
         this.id = id;
         this.slotStart = slotStart;
