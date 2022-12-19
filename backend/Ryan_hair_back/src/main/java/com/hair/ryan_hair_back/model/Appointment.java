@@ -28,7 +28,7 @@ public class Appointment {
     private String comment;
 
     @OneToOne
-    @JoinColumn(name = "id_time_slot")
+    @JoinColumn(name = "id_timeslot")
     private Timeslot timeSlot;
 
     @ManyToOne
