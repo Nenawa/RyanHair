@@ -27,13 +27,9 @@ public class Appointment {
     @Column(name="comment", nullable = true, columnDefinition="TEXT")
     private String comment;
 
-    /* commentaire des clés étrangère
-
-        @OneToOne
-        @JoinColumn(name = "id_time_slot")
-        private TimeSlot timeSlot;
-    */
-
+    @OneToOne
+    @JoinColumn(name = "id_time_slot")
+    private Timeslot timeSlot;
 
     @ManyToOne
     @JoinColumn(name="id_haircut",nullable = false)

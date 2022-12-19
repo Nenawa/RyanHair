@@ -40,6 +40,7 @@ public class AppointmentServiceImpl implements AppointmentService{
         a.setEmail(appointment.getEmail());
         a.setComment(appointment.getComment());
         a.setHaircut(appointment.getHaircut());
+        a.setTimeSlot(appointment.getTimeSlot());
         return appointmentRepository.save(a);
     }
 
