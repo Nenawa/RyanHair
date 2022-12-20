@@ -85,9 +85,9 @@ Returns array json data.
                             }
                         }
                     ]
-                };
+                }
             ]
-    ``
+    ```
             
 
 * **Sample Call:**
@@ -151,7 +151,7 @@ Returns json data about a single haircut.
                     }
                 }
             ]
-           }
+          }
         ```
 
 * **Error Response:**
@@ -363,9 +363,7 @@ Delete json data about a single haircut.
 
 * **Success Response:**
 
-    * **Code:** 200 OK  
-      **Content:** `{ error : "A COMPLETER" }`
-
+    * **Code:** 200 OK
 
 * **Sample Call:**
 
@@ -379,6 +377,9 @@ Delete json data about a single haircut.
       }
     });
   ```
+  
+---
+
 
 # Timeslot
 **Get all timeslots**
