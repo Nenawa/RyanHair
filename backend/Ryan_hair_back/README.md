@@ -40,21 +40,55 @@ Returns array json data.
 
 * **Data Params** : None
 
-* **Success Response:**
+  * **Success Response:**
 
-    * **Code:** 200 OK  
-      **Content:**
-
-          {
-          "id":1,
-          "haircutStatus":" ",
-          A COMPLETER
-          };
-
-          { 
-          "id":2,
-          "A COMPLETER,
-          }
+      * **Code:** 200 OK  
+        **Content:**
+    ```json
+            [
+                {
+                    "id":1,
+                    "status":"man",
+                    "description":"une jolie coupe",
+                    "appointmentList": [
+                        {
+                            "id": 1,
+                            "firstName": "maléphique",
+                            "lastName": "idule",
+                            "telephone": "0978657899",
+                            "email": "maléphique@truck.fr",
+                            "comment": "azzzzadzfmmf fplfpfzzzxzzzzzzzzzz",
+                            "timeSlot": {
+                                "id": 3,
+                                "slotStart": "2022-12-24 23:00",
+                                "slotEnd": "2022-12-24 23:00"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id":2,
+                    "status":"women",
+                    "description":"une jolie coupe avec de longue mèche",
+                    "appointmentList": [
+                        {
+                            "id": 1,
+                            "firstName": "belle",
+                            "lastName": "idule",
+                            "telephone": "0978697899",
+                            "email": "belle@truck.fr",
+                            "comment": "azzzzdf fplfpfzzzxzzzzzzzzzz",
+                            "timeSlot": {
+                                "id": 2,
+                                "slotStart": "2022-12-24 23:00",
+                                "slotEnd": "2022-12-24 23:00"
+                            }
+                        }
+                    ]
+                };
+            ]
+    ``
+            
 
 * **Sample Call:**
 
@@ -93,17 +127,32 @@ Returns json data about a single haircut.
 
   None
 
-* **Success Response:**
+  * **Success Response:**
 
-    * **Code:** 200  
-      **Content:**
-      ```json
-        { 
-          "id":1,
-          "A COMPLETER": "",
-          " ":" "
-        }
-      ```
+      * **Code:** 200  
+        **Content:**
+        ```json
+          {
+            "id": 1,
+            "status": "man",
+            "description": "coupe cour",
+            "appointmentList": [
+                {
+                "id": 1,
+                "firstName": "maléphique",
+                "lastName": "idule",
+                "telephone": "0978657899",
+                "email": "maléphique@truck.fr",
+                "comment": "azzzzadzfmmf fplfpfzzzxzzzzzzzzzz",
+                    "timeSlot": {
+                        "id": 3,
+                        "slotStart": "2022-12-24 23:00",
+                        "slotEnd": "2022-12-24 23:00"
+                    }
+                }
+            ]
+           }
+        ```
 
 * **Error Response:**
 
@@ -146,21 +195,43 @@ Save a single haircut in the data base.
 
   ```json
     {
-      "A COMPLETER":"A COMPLETER",
-      "A COMPLETER":"A COMPLETER"
+      "status" : "women",
+      "description" : "coupe cour",
+      "appointmentList": [{"id":1}, {"id":2}]
     }
   ```
 
-* **Success Response:**
+  * **Success Response:**
 
-    * **Code:** 201 CREATED  
-      **Content:**
-      ```json
-        {
-          "id":1,
-          "A COMPLETER": ""
-        }
-      ```
+      * **Code:** 201 CREATED  
+        **Content:**
+        ```json
+          {
+            "id": 3,
+            "status": "women",
+            "description": "coupe cour",
+            "appointmentList": [
+                {
+                    "id": 1,
+                    "firstName": null,
+                    "lastName": null,
+                    "telephone": null,
+                    "email": null,
+                    "comment": null,
+                    "timeSlot": null
+                },
+                {
+                    "id": 2,
+                    "firstName": null,
+                    "lastName": null,
+                    "telephone": null,
+                    "email": null,
+                    "comment": null,
+                    "timeSlot": null
+                }
+            ]
+          }
+        ```
 
 * **Sample Call:**
 
@@ -194,24 +265,62 @@ Update json data about a single haircut.
 
    `id=[Long]`
 
-* **Data Params**
+  * **Data Params**
 
-  ```json
-    {
-      "A COMPLETER": ""
-    }
-  ```
+    ```json
+      {
+        "status": "women",
+        "description": "truccccc",
+        "appointmentList": [
+          {
+              "id": 1
+          },
+          {
+              "id": 2
+          }
+        ]
+      }
+    ```
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 201 CREATED  
-      **Content:**
-      ```json
-        {
-          "id":1,
-          "A COMPLETER": ""
-        }
-      ```
+        * **Code:** 201 CREATED  
+          **Content:**
+          ```json
+            {
+                "id": 3,
+                "status": "women",
+                "description": "truccccc",
+                "appointmentList": [
+                    {
+                        "id": 1,
+                        "firstName": "maléphique",
+                        "lastName": "idule",
+                        "telephone": "0978657899",
+                        "email": "maléphique@truck.fr",
+                        "comment": "azzzzadzfmmf fplfpfzzzxzzzzzzzzzz",
+                        "timeSlot": {
+                            "id": 3,
+                            "slotStart": "2022-12-24 23:00",
+                            "slotEnd": "2022-12-24 23:00"
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "firstName": "machin",
+                        "lastName": "truck",
+                        "telephone": "0988657899",
+                        "email": "machin@truck.fr",
+                        "comment": "azzzzassssplfpfzzzxzzzzzzzzzz",
+                        "timeSlot": {
+                            "id": 3,
+                            "slotStart": "2022-12-24 23:00",
+                            "slotEnd": "2022-12-24 23:00"
+                        }
+                    }
+                ]
+            }
+          ```
 
 * **Error Response:**
 
@@ -222,7 +331,7 @@ Update json data about a single haircut.
 
   ```javascript
     fetch({
-      url: "api/haircuts/1",
+      url: "api/haircuts/3",
       dataType: "json",
       type : "PUT",
       success : function(response) {
