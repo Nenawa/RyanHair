@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-export default function Home() {
+export default function Presentation() {
 
 
     return (
-        <div id="home" className='home'>
+        <div id="presentation" className='presentation'>
 
             <h2 className="homeTitrePresentation">
                 Des cheveux en plein envol

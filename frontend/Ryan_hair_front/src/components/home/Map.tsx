@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function HomeMap() {
+export default function Map() {
 
     return (
         <div id="map" className='map'>
