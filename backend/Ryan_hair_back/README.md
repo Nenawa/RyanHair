@@ -942,7 +942,7 @@ Returns json data about a single appointment.
               "haircut": {
                             "id": 1,
                             "status": "women",
-                            "description": "meche rouge",
+                            "description": "meche rouge"
                           },
               "timeSlot": 
                          {
@@ -1019,7 +1019,7 @@ Update json data about a single appointment.
           "haircut": { //ICI
                           "id": 1,
                           "status": "women",
-                          "description": "meche rouge",
+                          "description": "meche rouge"
                       },
           "timeSlot": {
                           "id": 3,
