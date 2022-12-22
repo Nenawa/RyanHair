@@ -4,25 +4,36 @@
 .flex{
     display: flex;
 }
-.navbar{
-    align-items: center;
-    justify-content: center;
+.navbar-background{
+    height: 23px;
+    background-color: var(--site-navbar-bg);
+    width: 100%;
+    position: absolute;
+    top: 80px;
 }
 .navbar-logo{
     width: 180px;
-    
+    position: absolute;
+    left: 400px;
+    top: 16px;
+    z-index: 100;
 }
 .navbar-list {
-    /* border: 1px solid red; */
     width: 428px;
     justify-content: space-evenly ;
-    padding-left: 31px;
+    margin: 0;
     text-transform : uppercase;
     font-size: 20px;
     height: 23px;
+    position: absolute;
+    left: 611px;
 }
 
 .navbar-list li{
     border-right:1px solid black;
-   
+    text-align: center;
+}
+.admin{
+    position: absolute;
+    right: 10px;
 }
