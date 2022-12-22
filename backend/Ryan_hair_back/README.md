@@ -49,42 +49,12 @@ Returns array json data.
                   {
                       "id":1,
                       "status":"man",
-                      "description":"une jolie coupe",
-                      "appointmentList": [
-                          {
-                              "id": 1,
-                              "firstName": "pierre",
-                              "lastName": "bordenave",
-                              "telephone": "0978657899",
-                              "email": "pierre@truck.fr",
-                              "comment": "je dois impérativement passer à l'heure",
-                              "timeSlot": {
-                                  "id": 3,
-                                  "slotStart": "2022-12-24 23:00",
-                                  "slotEnd": "2022-12-24 23:00"
-                              }
-                          }
-                      ]
+                      "description":"une jolie coupe"
                   },
                   {
                       "id":2,
                       "status":"women",
-                      "description":"une jolie coupe avec de longue mèche",
-                      "appointmentList": [
-                          {
-                              "id": 1,
-                              "firstName": "belle",
-                              "lastName": "martin",
-                              "telephone": "0978697899",
-                              "email": "belle@truck.fr",
-                              "comment": "j'accepte 15 min de retard",
-                              "timeSlot": {
-                                  "id": 2,
-                                  "slotStart": "2022-12-24 23:00",
-                                  "slotEnd": "2022-12-24 23:00"
-                              }
-                          }
-                      ]
+                      "description":"une jolie coupe avec de longue mèche"
                   }
               ]
       ```
@@ -135,22 +105,7 @@ Returns json data about a single haircut.
             {
               "id": 1,
               "status": "man",
-              "description": "coupe cour",
-              "appointmentList": [
-                  {
-                  "id": 1,
-                  "firstName": "pierre",
-                  "lastName": "bordenave",
-                  "telephone": "0978657899",
-                  "email": "pierre@truck.fr",
-                  "comment": "je dois impérativement passer à l'heure",
-                      "timeSlot": {
-                          "id": 3,
-                          "slotStart": "2022-12-24 23:00",
-                          "slotEnd": "2022-12-24 23:00"
-                      }
-                  }
-              ]
+              "description": "coupe cour"
             }
           ```
 
@@ -196,8 +151,7 @@ Save a single haircut in the data base.
   ```json
     {
       "status" : "women",
-      "description" : "coupe cour",
-      "appointmentList": []
+      "description" : "coupe cour"
     }
   ```
 
@@ -209,8 +163,7 @@ Save a single haircut in the data base.
             {
               "id": 3,
               "status": "women",
-              "description": "coupe cour",
-              "appointmentList": []
+              "description": "coupe cour"
             }
           ```
 
@@ -251,8 +204,7 @@ Update json data about a single haircut.
   ```json
     {
       "status": "women",
-      "description": "meche rouge",
-      "appointmentList": []
+      "description": "meche rouge"
     }
   ```
 
@@ -264,8 +216,7 @@ Update json data about a single haircut.
             {
                 "id": 3,
                 "status": "women",
-                "description": "meche rouge",
-                "appointmentList": []
+                "description": "meche rouge"
             }
           ```
 
@@ -346,18 +297,20 @@ Returns array json data.
 
     * **Code:** 200 OK  
       **Content:**
-
+        ```json
+      [
           {
           "id":1,
           "timeslotStart":"2022-01-01 09:30:00",
           "timeslotEnd":"2022-01-01 10:45:00"
-          };
-
+          },
           { 
           "id":2,
-          "timeslotStart":"2022-01-01 10:45,
+          "timeslotStart":"2022-01-01 10:45",
           "timeslotEnd":"2022-12-25 11:30"
           }
+      ]
+      ```
 
 * **Sample Call:**
 
@@ -597,18 +550,20 @@ Returns array json data.
 
     * **Code:** 200 OK  
       **Content:**
-
+        ```json
+        [
           {
           "id":1,
           "ClosureStart":"2022-12-25 09:30",
           "ClosureEnd":"2022-12-25 13:30"
-          };
-
+          },
           { 
           "id":2,
           "ClosureStart":"2022-12-25 13:30",
           "ClosureEnd":"2022-12-25 18:00"
           }
+      ]
+      ```
 
 * **Sample Call:**
 
@@ -855,7 +810,7 @@ Save a single appointment in the data base.
       "lastName":"Bordenave",
       "telephone":"0534546678",
       "email":"coralie@gmail.com",
-      "comment":"je déteste tout ce qui n'a pas de couleur",
+      "comment":"je veux du rose",
       "haircut": {"id":1},
       "timeSlot": {"id":3}
     }
@@ -872,7 +827,7 @@ Save a single appointment in the data base.
           "lastName":"Bordenave",
           "telephone":"0534546678",
           "email":"coralie@gmail.com",
-          "comment":"je déteste tout ce qui n'a pas de couleur",
+          "comment":"je veux du rose",
           "haircut": {
                         "id": 1,
                         "status": null,
@@ -938,17 +893,17 @@ Returns json data about a single appointment.
               "lastName":"Bordenave",
               "telephone":"0534546678",
               "email":"coralie@gmail.com",
-              "comment":"je déteste tout ce qui n'a pas de couleur",
-              "haircut": {
-                            "id": 1,
-                            "status": "women",
-                            "description": "meche rouge"
-                          },
+              "comment":"je veux du rose",
               "timeSlot": 
                          {
                             "id":1,
                             "ClosureStart":"2022-12-25 09:30:00",
                             "ClosureEnd":"2022-12-25 13:30:00"
+                          },
+              "haircut": {
+                            "id": 1,
+                            "status": "women",
+                            "description": "meche rouge"
                           }
             }
           ```
@@ -999,7 +954,7 @@ Update json data about a single appointment.
       "telephone":"0534546678",
       "email":"pauline@gmail.com",
       "comment":"je déteste tout ce qui n'a pas de couleur",
-      "haircut": {"id":1},
+      "haircut": {"id":2},
       "timeSlot": {"id":3}
     }
   ```
@@ -1008,7 +963,6 @@ Update json data about a single appointment.
 
     * **Code:** 201 CREATED
       **Content:**
-      //ici
       ```json
         {
           "firstName":"Pauline",
@@ -1016,15 +970,15 @@ Update json data about a single appointment.
           "telephone":"0534546678",
           "email":"pauline@gmail.com",
           "comment":"je déteste tout ce qui n'a pas de couleur",
-          "haircut": { //ICI
-                          "id": 1,
-                          "status": "women",
-                          "description": "meche rouge"
+          "haircut": {
+                          "id": 2,
+                          "status": null,
+                          "description": null
                       },
           "timeSlot": {
                           "id": 3,
-                          "slotStart": "2022-12-24 23:00",
-                          "slotEnd": "2022-12-24 23:00"
+                          "slotStart": null,
+                          "slotEnd": null
           }
       }
       ```
@@ -1121,24 +1075,43 @@ Returns array json data.
       ```json
         [
           {
-            "id":1,
-            "firstName":"Pauline",
-            "lastName":"Bordenave",
-            "telephone":"0534546678",
-            "email":"pauline@gmail.com",
-            "comment":"je déteste tout ce qui n'a pas de couleur",
-            "timeSlot": {"id":3}
-          },
-          { 
-            "id":2,
-            "firstName":"Coco",
-            "lastName":"Mahi",
-            "telephone":"0538546678",
-            "email":"coco@gmail.com",
-            "comment":"j'aime que le jaune",
-            "timeSlot": {"id":2}
-          }
-        ]
+              "id":1,
+              "firstName":"Coralie",
+              "lastName":"Bordenave",
+              "telephone":"0534546678",
+              "email":"coralie@gmail.com",
+              "comment":"je veux du rose",
+              "timeSlot": 
+                         {
+                            "id":1,
+                            "ClosureStart":"2022-12-25 09:30:00",
+                            "ClosureEnd":"2022-12-25 13:30:00"
+                          },
+              "haircut": {
+                            "id": 1,
+                            "status": "women",
+                            "description": "meche rouge"
+                          }
+            },
+            {
+                "id":2,
+                "firstName":"Pauline",
+                "lastName":"Bordenave",
+                "telephone":"0534546678",
+                "email":"pauline@gmail.com",
+                "comment":"je déteste tout ce qui n'a pas de couleur",
+                "timeSlot": {
+                    "id": 2,
+                    "slotStart": "2022-12-24 23:00",
+                    "slotEnd": "2022-12-24 23:00"
+                },
+                "haircut": {
+                    "id": 3,
+                    "status": "women",
+                    "description": "e"
+                }
+            }
+          ]
       ```
 
 * **Error Response:**
