@@ -40,55 +40,25 @@ Returns array json data.
 
 * **Data Params** : None
 
-  * **Success Response:**
+    * **Success Response:**
 
-      * **Code:** 200 OK  
-        **Content:**
-    ```json
-            [
-                {
-                    "id":1,
-                    "status":"man",
-                    "description":"une jolie coupe",
-                    "appointmentList": [
-                        {
-                            "id": 1,
-                            "firstName": "maléphique",
-                            "lastName": "idule",
-                            "telephone": "0978657899",
-                            "email": "maléphique@truck.fr",
-                            "comment": "azzzzadzfmmf fplfpfzzzxzzzzzzzzzz",
-                            "timeSlot": {
-                                "id": 3,
-                                "slotStart": "2022-12-24 23:00",
-                                "slotEnd": "2022-12-24 23:00"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "id":2,
-                    "status":"women",
-                    "description":"une jolie coupe avec de longue mèche",
-                    "appointmentList": [
-                        {
-                            "id": 1,
-                            "firstName": "belle",
-                            "lastName": "idule",
-                            "telephone": "0978697899",
-                            "email": "belle@truck.fr",
-                            "comment": "azzzzdf fplfpfzzzxzzzzzzzzzz",
-                            "timeSlot": {
-                                "id": 2,
-                                "slotStart": "2022-12-24 23:00",
-                                "slotEnd": "2022-12-24 23:00"
-                            }
-                        }
-                    ]
-                }
-            ]
-    ```
-            
+        * **Code:** 200 OK  
+          **Content:**
+      ```json
+              [
+                  {
+                      "id":1,
+                      "status":"man",
+                      "description":"une jolie coupe"
+                  },
+                  {
+                      "id":2,
+                      "status":"women",
+                      "description":"une jolie coupe avec de longue mèche"
+                  }
+              ]
+      ```
+
 
 * **Sample Call:**
 
@@ -127,32 +97,17 @@ Returns json data about a single haircut.
 
   None
 
-  * **Success Response:**
+    * **Success Response:**
 
-      * **Code:** 200  
-        **Content:**
-        ```json
-          {
-            "id": 1,
-            "status": "man",
-            "description": "coupe cour",
-            "appointmentList": [
-                {
-                "id": 1,
-                "firstName": "maléphique",
-                "lastName": "idule",
-                "telephone": "0978657899",
-                "email": "maléphique@truck.fr",
-                "comment": "azzzzadzfmmf fplfpfzzzxzzzzzzzzzz",
-                    "timeSlot": {
-                        "id": 3,
-                        "slotStart": "2022-12-24 23:00",
-                        "slotEnd": "2022-12-24 23:00"
-                    }
-                }
-            ]
-          }
-        ```
+        * **Code:** 200  
+          **Content:**
+          ```json
+            {
+              "id": 1,
+              "status": "man",
+              "description": "coupe cour"
+            }
+          ```
 
 * **Error Response:**
 
@@ -196,42 +151,21 @@ Save a single haircut in the data base.
   ```json
     {
       "status" : "women",
-      "description" : "coupe cour",
-      "appointmentList": [{"id":1}, {"id":2}]
+      "description" : "coupe cour"
     }
   ```
 
-  * **Success Response:**
+    * **Success Response:**
 
-      * **Code:** 201 CREATED  
-        **Content:**
-        ```json
-          {
-            "id": 3,
-            "status": "women",
-            "description": "coupe cour",
-            "appointmentList": [
-                {
-                    "id": 1,
-                    "firstName": null,
-                    "lastName": null,
-                    "telephone": null,
-                    "email": null,
-                    "comment": null,
-                    "timeSlot": null
-                },
-                {
-                    "id": 2,
-                    "firstName": null,
-                    "lastName": null,
-                    "telephone": null,
-                    "email": null,
-                    "comment": null,
-                    "timeSlot": null
-                }
-            ]
-          }
-        ```
+        * **Code:** 201 CREATED  
+          **Content:**
+          ```json
+            {
+              "id": 3,
+              "status": "women",
+              "description": "coupe cour"
+            }
+          ```
 
 * **Sample Call:**
 
@@ -265,22 +199,14 @@ Update json data about a single haircut.
 
    `id=[Long]`
 
-  * **Data Params**
+* **Data Params**
 
-    ```json
-      {
-        "status": "women",
-        "description": "truccccc",
-        "appointmentList": [
-          {
-              "id": 1
-          },
-          {
-              "id": 2
-          }
-        ]
-      }
-    ```
+  ```json
+    {
+      "status": "women",
+      "description": "meche rouge"
+    }
+  ```
 
     * **Success Response:**
 
@@ -290,35 +216,7 @@ Update json data about a single haircut.
             {
                 "id": 3,
                 "status": "women",
-                "description": "truccccc",
-                "appointmentList": [
-                    {
-                        "id": 1,
-                        "firstName": "maléphique",
-                        "lastName": "idule",
-                        "telephone": "0978657899",
-                        "email": "maléphique@truck.fr",
-                        "comment": "azzzzadzfmmf fplfpfzzzxzzzzzzzzzz",
-                        "timeSlot": {
-                            "id": 3,
-                            "slotStart": "2022-12-24 23:00",
-                            "slotEnd": "2022-12-24 23:00"
-                        }
-                    },
-                    {
-                        "id": 2,
-                        "firstName": "machin",
-                        "lastName": "truck",
-                        "telephone": "0988657899",
-                        "email": "machin@truck.fr",
-                        "comment": "azzzzassssplfpfzzzxzzzzzzzzzz",
-                        "timeSlot": {
-                            "id": 3,
-                            "slotStart": "2022-12-24 23:00",
-                            "slotEnd": "2022-12-24 23:00"
-                        }
-                    }
-                ]
+                "description": "meche rouge"
             }
           ```
 
@@ -377,7 +275,7 @@ Delete json data about a single haircut.
       }
     });
   ```
-  
+
 ---
 
 
@@ -399,18 +297,20 @@ Returns array json data.
 
     * **Code:** 200 OK  
       **Content:**
-
+        ```json
+      [
           {
           "id":1,
           "timeslotStart":"2022-01-01 09:30:00",
           "timeslotEnd":"2022-01-01 10:45:00"
-          };
-
+          },
           { 
           "id":2,
-          "timeslotStart":"2022-01-01 10:45,
+          "timeslotStart":"2022-01-01 10:45",
           "timeslotEnd":"2022-12-25 11:30"
           }
+      ]
+      ```
 
 * **Sample Call:**
 
@@ -650,18 +550,20 @@ Returns array json data.
 
     * **Code:** 200 OK  
       **Content:**
-
+        ```json
+        [
           {
           "id":1,
           "ClosureStart":"2022-12-25 09:30",
           "ClosureEnd":"2022-12-25 13:30"
-          };
-
+          },
           { 
           "id":2,
           "ClosureStart":"2022-12-25 13:30",
           "ClosureEnd":"2022-12-25 18:00"
           }
+      ]
+      ```
 
 * **Sample Call:**
 
@@ -908,7 +810,7 @@ Save a single appointment in the data base.
       "lastName":"Bordenave",
       "telephone":"0534546678",
       "email":"coralie@gmail.com",
-      "comment":"je déteste tout ce qui n'a pas de couleur",
+      "comment":"je veux du rose",
       "haircut": {"id":1},
       "timeSlot": {"id":3}
     }
@@ -925,7 +827,12 @@ Save a single appointment in the data base.
           "lastName":"Bordenave",
           "telephone":"0534546678",
           "email":"coralie@gmail.com",
-          "comment":"je déteste tout ce qui n'a pas de couleur",
+          "comment":"je veux du rose",
+          "haircut": {
+                        "id": 1,
+                        "status": null,
+                        "description": null
+          } ,
           "timeSlot": 
                      {
                         "id": 3,
@@ -975,26 +882,31 @@ Returns json data about a single appointment.
 
   None
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 200 <br />
-      **Content:**
-      ```json
-        {
-          "id":1,
-          "firstName":"Coralie",
-          "lastName":"Bordenave",
-          "telephone":"0534546678",
-          "email":"coralie@gmail.com",
-          "comment":"je déteste tout ce qui n'a pas de couleur",
-          "timeSlot": 
-                     {
-                        "id": 3,
-                        "slotStart": null,
-                        "slotEnd": null
-                      }
-        }
-      ```
+        * **Code:** 200 <br />
+          **Content:**
+          ```json
+            {
+              "id":1,
+              "firstName":"Coralie",
+              "lastName":"Bordenave",
+              "telephone":"0534546678",
+              "email":"coralie@gmail.com",
+              "comment":"je veux du rose",
+              "timeSlot": 
+                         {
+                            "id":1,
+                            "ClosureStart":"2022-12-25 09:30:00",
+                            "ClosureEnd":"2022-12-25 13:30:00"
+                          },
+              "haircut": {
+                            "id": 1,
+                            "status": "women",
+                            "description": "meche rouge"
+                          }
+            }
+          ```
 * **Error Response:**
 
     * **Code:** 404 NOT FOUND <br />
@@ -1042,14 +954,14 @@ Update json data about a single appointment.
       "telephone":"0534546678",
       "email":"pauline@gmail.com",
       "comment":"je déteste tout ce qui n'a pas de couleur",
-      "haircut": {"id":1},
+      "haircut": {"id":2},
       "timeSlot": {"id":3}
     }
   ```
 
 * **Success Response:**
 
-    * **Code:** 201 CREATED 
+    * **Code:** 201 CREATED
       **Content:**
       ```json
         {
@@ -1058,10 +970,15 @@ Update json data about a single appointment.
           "telephone":"0534546678",
           "email":"pauline@gmail.com",
           "comment":"je déteste tout ce qui n'a pas de couleur",
+          "haircut": {
+                          "id": 2,
+                          "status": null,
+                          "description": null
+                      },
           "timeSlot": {
-            "id": 3,
-            "slotStart": "2022-12-24 23:00",
-            "slotEnd": "2022-12-24 23:00"
+                          "id": 3,
+                          "slotStart": null,
+                          "slotEnd": null
           }
       }
       ```
@@ -1158,24 +1075,43 @@ Returns array json data.
       ```json
         [
           {
-            "id":1,
-            "firstName":"Pauline",
-            "lastName":"Bordenave",
-            "telephone":"0534546678",
-            "email":"pauline@gmail.com",
-            "comment":"je déteste tout ce qui n'a pas de couleur",
-            "timeSlot": {"id":3}
-          },
-          { 
-            "id":2,
-            "firstName":"Coco",
-            "lastName":"Mahi",
-            "telephone":"0538546678",
-            "email":"coco@gmail.com",
-            "comment":"j'aime que le jaune",
-            "timeSlot": {"id":2}
-          }
-        ]
+              "id":1,
+              "firstName":"Coralie",
+              "lastName":"Bordenave",
+              "telephone":"0534546678",
+              "email":"coralie@gmail.com",
+              "comment":"je veux du rose",
+              "timeSlot": 
+                         {
+                            "id":1,
+                            "ClosureStart":"2022-12-25 09:30:00",
+                            "ClosureEnd":"2022-12-25 13:30:00"
+                          },
+              "haircut": {
+                            "id": 1,
+                            "status": "women",
+                            "description": "meche rouge"
+                          }
+            },
+            {
+                "id":2,
+                "firstName":"Pauline",
+                "lastName":"Bordenave",
+                "telephone":"0534546678",
+                "email":"pauline@gmail.com",
+                "comment":"je déteste tout ce qui n'a pas de couleur",
+                "timeSlot": {
+                    "id": 2,
+                    "slotStart": "2022-12-24 23:00",
+                    "slotEnd": "2022-12-24 23:00"
+                },
+                "haircut": {
+                    "id": 3,
+                    "status": "women",
+                    "description": "e"
+                }
+            }
+          ]
       ```
 
 * **Error Response:**
@@ -1221,7 +1157,7 @@ Update json data about appointment and haircut.
 
 * **Success Response:**
 
-    * **Code:** 200 OK  
+    * **Code:** 200 OK
 
 * **Error Response:**
 
@@ -1266,7 +1202,7 @@ Update json data about appointment and timeslot.
 
 * **Success Response:**
 
-    * **Code:** 200 OK  
+    * **Code:** 200 OK
 
 * **Error Response:**
 
@@ -1607,11 +1543,11 @@ Save a single role in the data base.
    None
 
 * **Data Params**
-    
+
 
 ```json
 {
-"name":"Admin"
+  "name":"Admin"
 }
 ```
 
