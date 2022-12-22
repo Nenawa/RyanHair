@@ -25,16 +25,18 @@ function AdminRdv(){
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Date</th>
+                <th>Coupe</th>
             </tr>
             </thead>
             <tbody>
             {
                 resp?.map((d)=>(
-                    <tr>
+                    <tr key={d.id}>
                         <td>{d.id}</td>
                         <td>{d.lastName}</td>
                         <td>{d.firstName}</td>
                         <td>{d.timeSlot.slotStart}</td>
+                        <td>{d.haircut.status}</td>
                     </tr>
                 ))
             }
