@@ -19,24 +19,28 @@ function AdminRdv(){
 
     return(
         <table>
-            <th>
-                <td>#</td>
-                <td>Nom</td>
-                <td>Prenom</td>
-                <td>Date</td>
-            </th>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
             {
                 resp?.map((d)=>(
                     <tr>
-                        <td>d.id</td>
-                        <td>d.lastName</td>
-                        <td>d.firstName</td>
-                        <td>d.timeSlot.slotStart</td>
+                        <td>{d.id}</td>
+                        <td>{d.lastName}</td>
+                        <td>{d.firstName}</td>
+                        <td>{d.timeSlot.slotStart}</td>
                     </tr>
                 ))
             }
-
+            </tbody>
         </table>
 
     )
 }
+export default AdminRdv;
