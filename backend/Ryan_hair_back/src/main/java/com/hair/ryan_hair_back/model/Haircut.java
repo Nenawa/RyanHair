@@ -24,7 +24,6 @@ public class Haircut {
     HaircutStatus status;
     @Column(name="description", nullable = true, columnDefinition="TEXT")
     private String description;
-
     @OneToMany(mappedBy = "haircut")
     @JsonManagedReference
     private List<Appointment> appointmentList = new ArrayList<>();
