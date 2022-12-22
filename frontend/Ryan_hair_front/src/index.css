@@ -1,3 +1,17 @@
+/* variables css */
+:root{
+ --site-body-bg: #FFFFFF		/*(blanc en haut)*/
+ --site-navbar-bg : #D9D9D9		/*(rectangle gris navbar)*/
+ --site-contenu-bg : #F7F7F7	/*	(fond couleur crème) */
 
+ --site-text-primary: #000000		/*(noir)*/
+ --site-text-secondary: #FFFFFF	/*(blanc)*/
+ --site-text-tertiary: #6F6F6F
+
+ /* --admin-text-primary: #
+ --admin-text-secondary: #
+ --admin-body-bg: # */
+
+}
 
 
