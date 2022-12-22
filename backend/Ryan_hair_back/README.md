@@ -49,42 +49,12 @@ Returns array json data.
                   {
                       "id":1,
                       "status":"man",
-                      "description":"une jolie coupe",
-                      "appointmentList": [
-                          {
-                              "id": 1,
-                              "firstName": "pierre",
-                              "lastName": "bordenave",
-                              "telephone": "0978657899",
-                              "email": "pierre@hotmail.fr",
-                              "comment": "je dois impérativement passer à l'heure",
-                              "timeSlot": {
-                                  "id": 3,
-                                  "slotStart": "2022-12-24 23:00",
-                                  "slotEnd": "2022-12-24 23:00"
-                              }
-                          }
-                      ]
+                      "description":"une jolie coupe"
                   },
                   {
                       "id":2,
                       "status":"women",
-                      "description":"une jolie coupe avec de longue mèche",
-                      "appointmentList": [
-                          {
-                              "id": 1,
-                              "firstName": "belle",
-                              "lastName": "martin",
-                              "telephone": "0978697899",
-                              "email": "belle@gmail.fr",
-                              "comment": "j'accepte 15 min de retard",
-                              "timeSlot": {
-                                  "id": 2,
-                                  "slotStart": "2022-12-24 23:00",
-                                  "slotEnd": "2022-12-24 23:00"
-                              }
-                          }
-                      ]
+                      "description":"une jolie coupe avec de longue mèche"
                   }
               ]
       ```
@@ -135,22 +105,7 @@ Returns json data about a single haircut.
             {
               "id": 1,
               "status": "man",
-              "description": "coupe cour",
-              "appointmentList": [
-                  {
-                  "id": 1,
-                  "firstName": "pierre",
-                  "lastName": "bordenave",
-                  "telephone": "0978657899",
-                  "email": "pierre@hotmail.fr",
-                  "comment": "je dois impérativement passer à l'heure",
-                      "timeSlot": {
-                          "id": 3,
-                          "slotStart": "2022-12-24 23:00",
-                          "slotEnd": "2022-12-24 23:00"
-                      }
-                  }
-              ]
+              "description": "coupe cour"
             }
           ```
 
@@ -196,8 +151,7 @@ Save a single haircut in the data base.
   ```json
     {
       "status" : "women",
-      "description" : "coupe cour",
-      "appointmentList": []
+      "description" : "coupe cour"
     }
   ```
 
@@ -209,8 +163,7 @@ Save a single haircut in the data base.
             {
               "id": 3,
               "status": "women",
-              "description": "coupe cour",
-              "appointmentList": []
+              "description": "coupe cour"
             }
           ```
 
@@ -251,8 +204,7 @@ Update json data about a single haircut.
   ```json
     {
       "status": "women",
-      "description": "meche rouge",
-      "appointmentList": []
+      "description": "meche rouge"
     }
   ```
 
@@ -264,8 +216,7 @@ Update json data about a single haircut.
             {
                 "id": 3,
                 "status": "women",
-                "description": "meche rouge",
-                "appointmentList": []
+                "description": "meche rouge"
             }
           ```
 
