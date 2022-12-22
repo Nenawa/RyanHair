@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import Home from "./pages/Home";
 import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
+import AdminRdv from "./pages/Admin-rdv";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,12 @@ const router = createBrowserRouter([
         //element:
     },
     {
-        path:"admin"
+        path:"admin",
+        children:
+        [{
+            path: "rdv",
+            element:<AdminRdv />
+        }]
     }
 ])
 
