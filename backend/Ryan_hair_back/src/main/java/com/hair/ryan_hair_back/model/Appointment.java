@@ -1,6 +1,5 @@
 package com.hair.ryan_hair_back.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -33,7 +32,6 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name="id_haircut",nullable = false)
-    @JsonBackReference
     private Haircut haircut;
 
     public Appointment() {
