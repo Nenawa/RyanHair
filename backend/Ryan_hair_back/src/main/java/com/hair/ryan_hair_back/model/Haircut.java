@@ -1,6 +1,8 @@
 package com.hair.ryan_hair_back.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.hair.ryan_hair_back.enums.HaircutStatus;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -11,6 +13,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "haircut")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Haircut {
 
     @Id
