@@ -4,11 +4,13 @@ import App from './App'
 import './index.css'
 import AdminRdv from "./pages/Admin-rdv";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Navbar from './components/Navbar';
 
 const router = createBrowserRouter([
+    
     {
         path: "/",
-        //element:
+        element:<Navbar />   
 
     },
     {
