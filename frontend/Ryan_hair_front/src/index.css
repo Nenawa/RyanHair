@@ -22,10 +22,32 @@
     --site-font-size : 1rem;
 }
 
+html {
+    line-height: 1.15;
+    /* 1. Correct the line height in all browsers. */
+    -webkit-text-size-adjust: 100%;
+    /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+}
+
 body {
     position: relative;
     width: 1440px;
     background: var(--site-body-bg);
     font-family: var(--site-font-family);
     color: var(--site-textColor-primary);
+    font-size: var(--site-font-size);
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--site-textColor-primary);
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style: none;
 }

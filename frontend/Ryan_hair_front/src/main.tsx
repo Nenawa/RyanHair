@@ -6,8 +6,10 @@ import '../src/components/home/home.css'
 import Home from "./pages/Home";
 import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
 import AdminRdv from "./pages/Admin-rdv";
+import Navbar from './components/Navbar';
 
 const router = createBrowserRouter([
+    
     {
         path: "/",
         element : <Home />
