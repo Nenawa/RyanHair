@@ -1,7 +1,9 @@
 .flex {
     display: flex;
 }
-
+.navbar{
+    background-color: var(--site-body-background);
+}
 .navbar-background {
     height: 23px;
     background-color: var(--site-navbar-bg);
@@ -51,6 +53,7 @@
 }
 .admin {
     position: absolute;
-    right: 10px;
-    padding-top: 3px;
+    right: 20px;
+    top: -60px;
+    filter: opacity(0.7);
 }
