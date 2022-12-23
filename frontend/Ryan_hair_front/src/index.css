@@ -1,3 +1,31 @@
+/* Variables CSS */
 
+:root {
+    /* couleurs : */
 
+    --site-body-bg : #FFFFFF;
+    --site-navbar-bg : #D9D9D9;
+    --site-contenu-bg : #F7F7F7;
 
+    --site-textColor-primary : #000000;
+    --site-text-secondary : #FFFFFF;
+    --site-text-tertiary : #6F6F6F;
+
+    /*
+        --admin-text-primary: #;
+        --admin-text-secondary: #;
+        --admin-body-bg: #;
+    */
+
+    /* typo */
+    --site-font-family : “Roboto”, sans-serif;
+    --site-font-size : 1rem;
+}
+
+body {
+    position: relative;
+    width: 1440px;
+    background: var(--site-body-bg);
+    font-family: var(--site-font-family);
+    color: var(--site-textColor-primary);
+}
