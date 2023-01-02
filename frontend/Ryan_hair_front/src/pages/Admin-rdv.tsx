@@ -1,8 +1,20 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
+import {MouseEventHandler, useEffect, useState} from "react";
 
 function AdminRdv(){
     const [resp, setRes] = useState([]);
+    function deleteAppmt(e: any): void{
+        console.log(e.target.attributes['datakey'].value)
+        let rowid:number = e.target.attributes['datakey'].value;
+        axios.delete(`http://localhost:8080/api/appointments/${rowid}`)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    }
     function getData() {
         axios
             .get(
@@ -13,7 +25,8 @@ function AdminRdv(){
                 console.log(res.data);
             });
 
-    }  useEffect(() => {
+    }
+    useEffect(() => {
         getData();
     }, []);
 
@@ -26,6 +39,7 @@ function AdminRdv(){
                 <th>Prenom</th>
                 <th>Date</th>
                 <th>Coupe</th>
+                <th>Suprimmer</th>
             </tr>
             </thead>
             <tbody>
@@ -37,6 +51,7 @@ function AdminRdv(){
                         <td>{d.firstName}</td>
                         <td>{d.timeSlot.slotStart}</td>
                         <td>{d.haircut.status}</td>
+                        <td><button datakey={d.id} onClick={deleteAppmt}>Supprimer</button></td>
                     </tr>
                 ))
             }
