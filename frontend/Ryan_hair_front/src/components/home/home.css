@@ -12,7 +12,13 @@
 
 /* Home Table */
 
-table { border : none; }
+table {
+    border : none;
+}
+
+td, th {
+    border-bottom: 1px solid black;
+}
 
 .jour{
     width: 167px;
@@ -21,6 +27,5 @@ table { border : none; }
 
 .heure{
     position: absolute;
-    left: 276px;
     text-align: right;
 }

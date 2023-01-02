@@ -10,35 +10,32 @@ export default function Table() {
             <table>
                 <tbody>
                     <tr>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
                         <td className={"jour"}>Lundi</td>
-                        <th className={"heure"}>fermé</th>
+                        <td className={"heure"}>fermé</td>
                     </tr>
                     <tr>
                         <td className={"jour"}>Mardi</td>
-                        <th className={"heure"}>9:30 - 18:00</th>
+                        <td className={"heure"}>9:30 - 18:00</td>
                     </tr>
                     <tr>
                         <td className={"jour"}>Mercredi</td>
-                        <th className={"heure"}>9:30 - 18:00</th>
+                        <td className={"heure"}>9:30 - 18:00</td>
                     </tr>
                     <tr>
                         <td className={"jour"}>Jeudi</td>
-                        <th className={"heure"}> 9:30 - 18:00</th>
+                        <td className={"heure"}> 9:30 - 18:00</td>
                     </tr>
                     <tr>
                         <td className={"jour"}>Vendredi</td>
-                        <th className={"heure"}> 9:30 - 18:00</th>
+                        <td className={"heure"}> 9:30 - 18:00</td>
                     </tr>
                     <tr>
                         <td className={"jour"}>Samedi</td>
-                        <th className={"heure"}> 9:30 - 18:00</th>
+                        <td className={"heure"}> 9:30 - 18:00</td>
                     </tr>
                     <tr>
                         <td className={"jour"}>Dimanche</td>
-                        <th className={"heure"}> fermé</th>
+                        <td className={"heure"}> fermé</td>
                     </tr>
                 </tbody>
             </table>
