@@ -3,10 +3,10 @@ import './Navbar.css'
 
 export default function Navbar() {
 
-      return (
+    return (
         <>
             <div className="navbar flex">
-                <Link to={'/'}><img  className="navbar-logo" src="src/assets/images/logo.png" alt="logo Ryan Hair" />
+                <Link to={'/'}><img className="navbar-logo" src="src/assets/images/logo.png" alt="logo Ryan Hair" />
                 </Link>
                 <div className="navbar-background">
                     <ul className="navbar-list flex ">
