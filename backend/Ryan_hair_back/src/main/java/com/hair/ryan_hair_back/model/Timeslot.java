@@ -16,7 +16,6 @@ public class Timeslot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
 
     @Column
@@ -29,7 +28,6 @@ public class Timeslot {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date slotEnd;
 
-    @Autowired
     public Timeslot(Long id, Date slotStart, Date slotEnd) {
         this.id = id;
         this.slotStart = slotStart;

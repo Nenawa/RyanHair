@@ -1,8 +1,12 @@
 package com.hair.ryan_hair_back.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hair.ryan_hair_back.enums.HaircutStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,6 +21,9 @@ public class Haircut {
     HaircutStatus status;
     @Column(name="description", nullable = true, columnDefinition="TEXT")
     private String description;
+    @JsonIgnore
+    @OneToMany(mappedBy = "haircut")
+    private List<Appointment> appointmentList = new ArrayList<>();
 
     public Haircut() {
     }
