@@ -1,0 +1,24 @@
+/* Reservation */
+.reservation {
+    position: absolute;
+    left: 154px;
+    line-height: 19px;
+}
+
+/* Reservation Formulaire_donnee */
+
+.email {
+    margin-top: 1rem;
+}
+
+.nom {
+    margin-top: 1rem;
+}
+
+.prenom {
+    margin-top: 1rem;
+}
+
+.description {
+    margin-top: 1rem;
+}

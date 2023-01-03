@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../components/home/home.css'
 
 import Presentation from "../components/home/Presentation";
 import Map from "../components/home/Map";
