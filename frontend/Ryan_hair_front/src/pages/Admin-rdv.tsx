@@ -58,6 +58,8 @@ function AdminRdv(){
             </tbody>
         </table>
 
+        <button >Ajouter un rendez-vous</button>
+
     )
 }
 export default AdminRdv;
