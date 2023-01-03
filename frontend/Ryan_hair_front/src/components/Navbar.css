@@ -1,7 +1,9 @@
 .flex {
     display: flex;
 }
-
+.navbar{
+    background-color: var(--site-body-background);
+}
 .navbar-background {
     height: 23px;
     background-color: var(--site-navbar-bg);
@@ -23,7 +25,7 @@
     justify-content: space-evenly;
     margin: 0;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: var(--site-navbar-bg);
     height: 23px;
     position: absolute;
     left: 611px;
@@ -31,6 +33,15 @@
 
 .navbar-list li {
    display: contents;
+}
+.navbar-list a{
+    padding-top: 4px;
+}
+.navbar-list a:hover{
+    color: rgb(7, 59, 75);
+    text-decoration: underline;
+    font-size: 20px;
+    padding-top: 0;
 }
 
 .navbar-list li:after {
@@ -42,6 +53,7 @@
 }
 .admin {
     position: absolute;
-    right: 10px;
-    padding-top: 3px;
+    right: 20px;
+    top: -60px;
+    filter: opacity(0.7);
 }
