@@ -56,16 +56,16 @@ const router = createBrowserRouter([
                 path: "/rendezvous",
                 element: <Reservation />
             },
-            {
-                path:"admin",
-                children:
-                    [{
-                        path: "rdv",
-                        element:<AdminRdv />
-                    }]
-            }
-        ]
 
+        ]
+    },
+    {
+        path:"admin",
+        children:
+            [{
+                path: "rdv",
+                element:<AdminRdv />
+            }]
     }
 ])
 
