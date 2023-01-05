@@ -20,11 +20,10 @@ export default function Navbar() {
                         <li>
                             <Link to="/rendezvous" >rendez-vous</Link>
                         </li>
+                        <li>
+                            <Link to="/admin" >administration</Link>
+                        </li>
                     </ul>
-
-                    <div className="admin">
-                        <Link to="/admin" >administration</Link>
-                    </div>
                 </div>
             </div>
         </>

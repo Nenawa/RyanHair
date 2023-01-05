@@ -47,25 +47,27 @@ const HeaderLayout = () => (
 const router = createBrowserRouter([
     {
         element: <HeaderLayout />,
-        children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/rendezvous",
-                element: <Reservation />
-            },
-
-        ]
+        children:
+            [
+                {
+                    path: "/",
+                    element: <Home />,
+                },
+                {
+                    path: "/rendezvous",
+                    element: <Reservation />
+                }
+            ]
     },
     {
         path:"admin",
         children:
-            [{
-                path: "rdv",
-                element:<AdminRdv />
-            }]
+            [
+                {
+                    path: "rdv",
+                    element:<AdminRdv />
+                }
+            ]
     }
 ])
 

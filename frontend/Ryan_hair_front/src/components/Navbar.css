@@ -3,30 +3,33 @@
 }
 
 .navbar-background {
-    height: 23px;
+    height: 2rem;
     background-color: var(--site-navbar-bg);
     width: 100%;
-    position: absolute;
-    top: 80px;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    /*position: absolute;*/
+    /*top: 80px;*/
 }
 
 .navbar-logo {
-    width: 180px;
+    width: 8rem;
     position: absolute;
-    left: 400px;
-    top: 16px;
+    left: 25rem;
+    /*top: 0rem;*/
     z-index: 100;
 }
 
 .navbar-list {
-    width: 428px;
+    width: 32rem;
+    display:flex;
     justify-content: space-evenly;
-    margin: 0;
+    margin: 0.5rem;
     text-transform: uppercase;
-    font-size: 20px;
-    height: 23px;
+    font-size: 1rem;
+    height: 2rem;
     position: absolute;
-    left: 611px;
+    left: 39rem;
 }
 
 .navbar-list li {
@@ -35,13 +38,15 @@
 
 .navbar-list li:after {
     content: " |";
-    font-size: 18px;
+    font-size: 1rem;
 }
 .navbar-list li:last-child:after{
     content: normal;
 }
+/*
 .admin {
     position: absolute;
     right: 10px;
     padding-top: 3px;
 }
+*/
