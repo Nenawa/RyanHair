@@ -1,0 +1,26 @@
+/* Reservation */
+.reservation {
+    position: absolute;
+    left: 154px;
+    line-height: 19px;
+}
+
+/* Reservation Formulaire_donnee */
+
+.formulaire_donnee {
+    padding-left: 3rem;
+}
+
+.titre_formulaire{
+    margin-bottom: 2rem;
+}
+
+textarea {
+    height: 10rem;
+}
+
+.form-control {
+    margin-top: 1rem;
+    width: 18rem;
+}
+
