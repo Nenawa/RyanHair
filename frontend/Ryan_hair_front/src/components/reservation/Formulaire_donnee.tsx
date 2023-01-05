@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import emailjs from 'emailjs-com';
 
 export default function Formulaire_donnee() {
 
@@ -59,7 +60,7 @@ export default function Formulaire_donnee() {
         <div id="formulaire_donnee" className='formulaire_donnee'>
 
             <>
-                <h3>3. Prendre rendez-vous</h3>
+                <h3 className="titre_formulaire">3. Prendre rendez-vous</h3>
 
                 <PhoneInput
                     country={'fr'}
@@ -67,26 +68,50 @@ export default function Formulaire_donnee() {
                     onChange={setTelephoneError}
                 />
 
-                <input className="email" type="email" placeholder="Email" name="email"/>
+                <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    id="email"
+                    placeholder="Email"
+                />
                 {
                     emailError ? {emailError} : ''
                 }
 
-                <input className="nom" type="text" placeholder="Nom" name="nom"/>
+                <input
+                    type="name"
+                    name="name"
+                    className="form-control"
+                    id="name"
+                    placeholder="Nom"
+                />
                 {
                     nomError ? {nomError} : ''
                 }
 
-                <input className="prenom" type="text" placeholder="Prenom" name="prenom"/>
+                <input
+                    type="name"
+                    name="name"
+                    className="form-control"
+                    id="name"
+                    placeholder="Prenom"
+                />
                 {
                     prenomError ? {prenomError} : ''
                 }
 
-                <input className="description" type="text" placeholder="Description" name="description"/>
+                <div className="form-group">
+                    <textarea
+                        className="form-control"
+                        id="email_body"
+                        placeholder="Description"
+                    ></textarea>
+                </div>
                 {
                     descriptionError ? {descriptionError} : ''
                 }
-
+                <button>Envoyer</button>
                 <form id="stripe-login" method="POST" onSubmit={onSubmit}></form>
             </>
 

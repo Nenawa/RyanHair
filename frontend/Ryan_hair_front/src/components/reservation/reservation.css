@@ -7,18 +7,20 @@
 
 /* Reservation Formulaire_donnee */
 
-.email {
-    margin-top: 1rem;
+.formulaire_donnee {
+    padding-left: 3rem;
 }
 
-.nom {
-    margin-top: 1rem;
+.titre_formulaire{
+    margin-bottom: 2rem;
 }
 
-.prenom {
-    margin-top: 1rem;
+textarea {
+    height: 10rem;
 }
 
-.description {
+.form-control {
     margin-top: 1rem;
+    width: 18rem;
 }
+
