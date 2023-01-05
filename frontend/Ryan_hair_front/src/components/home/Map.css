@@ -1,9 +1,6 @@
-#map__container { 
-    border: 1px solid red;
-    height: 200px;
+#map__container, .leaflet-container { 
+    height: 286px;
     width: 559px; 
-    overflow: visible;
+    margin: auto;
 }
-.leaflet-container {
-    overflow: visible;
-}
+
