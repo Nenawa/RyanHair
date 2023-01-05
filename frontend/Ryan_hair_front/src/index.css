@@ -31,7 +31,7 @@ html {
 
 body {
     position: relative;
-    width: 1440px;
+    /*width: 1440px;*/
     background: var(--site-body-bg);
     font-family: var(--site-font-family);
     color: var(--site-textColor-primary);
