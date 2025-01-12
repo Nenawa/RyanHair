@@ -1,0 +1,33 @@
+/* Home */
+.home{
+    line-height: 19px;
+}
+
+/* Home Presentation */
+.home__presentation{
+    margin: auto;
+    margin-top: 120px;
+    width: 995px;
+     
+}
+/* Home Map */
+
+/* Home Table */
+
+table {
+    border : none;
+}
+
+td, th {
+    border-bottom: 1px solid black;
+}
+
+.jour{
+    width: 167px;
+    line-height: 19px;
+}
+
+.heure{
+    position: absolute;
+    text-align: right;
+}
