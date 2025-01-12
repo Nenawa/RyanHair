@@ -40,21 +40,25 @@ Returns array json data.
 
 * **Data Params** : None
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 200 OK  
-      **Content:**
+        * **Code:** 200 OK  
+          **Content:**
+      ```json
+              [
+                  {
+                      "id":1,
+                      "status":"man",
+                      "description":"une jolie coupe"
+                  },
+                  {
+                      "id":2,
+                      "status":"women",
+                      "description":"une jolie coupe avec de longue mèche"
+                  }
+              ]
+      ```
 
-          {
-          "id":1,
-          "haircutStatus":" ",
-          A COMPLETER
-          };
-
-          { 
-          "id":2,
-          "A COMPLETER,
-          }
 
 * **Sample Call:**
 
@@ -93,17 +97,17 @@ Returns json data about a single haircut.
 
   None
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 200  
-      **Content:**
-      ```json
-        { 
-          "id":1,
-          "A COMPLETER": "",
-          " ":" "
-        }
-      ```
+        * **Code:** 200  
+          **Content:**
+          ```json
+            {
+              "id": 1,
+              "status": "man",
+              "description": "coupe cour"
+            }
+          ```
 
 * **Error Response:**
 
@@ -146,21 +150,22 @@ Save a single haircut in the data base.
 
   ```json
     {
-      "A COMPLETER":"A COMPLETER",
-      "A COMPLETER":"A COMPLETER"
+      "status" : "women",
+      "description" : "coupe cour"
     }
   ```
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 201 CREATED  
-      **Content:**
-      ```json
-        {
-          "id":1,
-          "A COMPLETER": ""
-        }
-      ```
+        * **Code:** 201 CREATED  
+          **Content:**
+          ```json
+            {
+              "id": 3,
+              "status": "women",
+              "description": "coupe cour"
+            }
+          ```
 
 * **Sample Call:**
 
@@ -198,20 +203,22 @@ Update json data about a single haircut.
 
   ```json
     {
-      "A COMPLETER": ""
+      "status": "women",
+      "description": "meche rouge"
     }
   ```
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 201 CREATED  
-      **Content:**
-      ```json
-        {
-          "id":1,
-          "A COMPLETER": ""
-        }
-      ```
+        * **Code:** 201 CREATED  
+          **Content:**
+          ```json
+            {
+                "id": 3,
+                "status": "women",
+                "description": "meche rouge"
+            }
+          ```
 
 * **Error Response:**
 
@@ -222,7 +229,7 @@ Update json data about a single haircut.
 
   ```javascript
     fetch({
-      url: "api/haircuts/1",
+      url: "api/haircuts/3",
       dataType: "json",
       type : "PUT",
       success : function(response) {
@@ -254,9 +261,7 @@ Delete json data about a single haircut.
 
 * **Success Response:**
 
-    * **Code:** 200 OK  
-      **Content:** `{ error : "A COMPLETER" }`
-
+    * **Code:** 200 OK
 
 * **Sample Call:**
 
@@ -270,6 +275,9 @@ Delete json data about a single haircut.
       }
     });
   ```
+
+---
+
 
 # Timeslot
 **Get all timeslots**
@@ -289,18 +297,20 @@ Returns array json data.
 
     * **Code:** 200 OK  
       **Content:**
-
+        ```json
+      [
           {
           "id":1,
           "timeslotStart":"2022-01-01 09:30:00",
           "timeslotEnd":"2022-01-01 10:45:00"
-          };
-
+          },
           { 
           "id":2,
-          "timeslotStart":"2022-01-01 10:45,
+          "timeslotStart":"2022-01-01 10:45",
           "timeslotEnd":"2022-12-25 11:30"
           }
+      ]
+      ```
 
 * **Sample Call:**
 
@@ -540,18 +550,20 @@ Returns array json data.
 
     * **Code:** 200 OK  
       **Content:**
-
+        ```json
+        [
           {
           "id":1,
           "ClosureStart":"2022-12-25 09:30",
           "ClosureEnd":"2022-12-25 13:30"
-          };
-
+          },
           { 
           "id":2,
           "ClosureStart":"2022-12-25 13:30",
           "ClosureEnd":"2022-12-25 18:00"
           }
+      ]
+      ```
 
 * **Sample Call:**
 
@@ -798,7 +810,7 @@ Save a single appointment in the data base.
       "lastName":"Bordenave",
       "telephone":"0534546678",
       "email":"coralie@gmail.com",
-      "comment":"je déteste tout ce qui n'a pas de couleur",
+      "comment":"je veux du rose",
       "haircut": {"id":1},
       "timeSlot": {"id":3}
     }
@@ -815,7 +827,12 @@ Save a single appointment in the data base.
           "lastName":"Bordenave",
           "telephone":"0534546678",
           "email":"coralie@gmail.com",
-          "comment":"je déteste tout ce qui n'a pas de couleur",
+          "comment":"je veux du rose",
+          "haircut": {
+                        "id": 1,
+                        "status": null,
+                        "description": null
+          } ,
           "timeSlot": 
                      {
                         "id": 3,
@@ -865,26 +882,31 @@ Returns json data about a single appointment.
 
   None
 
-* **Success Response:**
+    * **Success Response:**
 
-    * **Code:** 200 <br />
-      **Content:**
-      ```json
-        {
-          "id":1,
-          "firstName":"Coralie",
-          "lastName":"Bordenave",
-          "telephone":"0534546678",
-          "email":"coralie@gmail.com",
-          "comment":"je déteste tout ce qui n'a pas de couleur",
-          "timeSlot": 
-                     {
-                        "id": 3,
-                        "slotStart": null,
-                        "slotEnd": null
-                      }
-        }
-      ```
+        * **Code:** 200 <br />
+          **Content:**
+          ```json
+            {
+              "id":1,
+              "firstName":"Coralie",
+              "lastName":"Bordenave",
+              "telephone":"0534546678",
+              "email":"coralie@gmail.com",
+              "comment":"je veux du rose",
+              "timeSlot": 
+                         {
+                            "id":1,
+                            "ClosureStart":"2022-12-25 09:30:00",
+                            "ClosureEnd":"2022-12-25 13:30:00"
+                          },
+              "haircut": {
+                            "id": 1,
+                            "status": "women",
+                            "description": "meche rouge"
+                          }
+            }
+          ```
 * **Error Response:**
 
     * **Code:** 404 NOT FOUND <br />
@@ -932,14 +954,14 @@ Update json data about a single appointment.
       "telephone":"0534546678",
       "email":"pauline@gmail.com",
       "comment":"je déteste tout ce qui n'a pas de couleur",
-      "haircut": {"id":1},
+      "haircut": {"id":2},
       "timeSlot": {"id":3}
     }
   ```
 
 * **Success Response:**
 
-    * **Code:** 201 CREATED 
+    * **Code:** 201 CREATED
       **Content:**
       ```json
         {
@@ -948,10 +970,15 @@ Update json data about a single appointment.
           "telephone":"0534546678",
           "email":"pauline@gmail.com",
           "comment":"je déteste tout ce qui n'a pas de couleur",
+          "haircut": {
+                          "id": 2,
+                          "status": null,
+                          "description": null
+                      },
           "timeSlot": {
-            "id": 3,
-            "slotStart": "2022-12-24 23:00",
-            "slotEnd": "2022-12-24 23:00"
+                          "id": 3,
+                          "slotStart": null,
+                          "slotEnd": null
           }
       }
       ```
@@ -1048,24 +1075,43 @@ Returns array json data.
       ```json
         [
           {
-            "id":1,
-            "firstName":"Pauline",
-            "lastName":"Bordenave",
-            "telephone":"0534546678",
-            "email":"pauline@gmail.com",
-            "comment":"je déteste tout ce qui n'a pas de couleur",
-            "timeSlot": {"id":3}
-          },
-          { 
-            "id":2,
-            "firstName":"Coco",
-            "lastName":"Mahi",
-            "telephone":"0538546678",
-            "email":"coco@gmail.com",
-            "comment":"j'aime que le jaune",
-            "timeSlot": {"id":2}
-          }
-        ]
+              "id":1,
+              "firstName":"Coralie",
+              "lastName":"Bordenave",
+              "telephone":"0534546678",
+              "email":"coralie@gmail.com",
+              "comment":"je veux du rose",
+              "timeSlot": 
+                         {
+                            "id":1,
+                            "ClosureStart":"2022-12-25 09:30:00",
+                            "ClosureEnd":"2022-12-25 13:30:00"
+                          },
+              "haircut": {
+                            "id": 1,
+                            "status": "women",
+                            "description": "meche rouge"
+                          }
+            },
+            {
+                "id":2,
+                "firstName":"Pauline",
+                "lastName":"Bordenave",
+                "telephone":"0534546678",
+                "email":"pauline@gmail.com",
+                "comment":"je déteste tout ce qui n'a pas de couleur",
+                "timeSlot": {
+                    "id": 2,
+                    "slotStart": "2022-12-24 23:00",
+                    "slotEnd": "2022-12-24 23:00"
+                },
+                "haircut": {
+                    "id": 3,
+                    "status": "women",
+                    "description": "e"
+                }
+            }
+          ]
       ```
 
 * **Error Response:**
@@ -1111,7 +1157,7 @@ Update json data about appointment and haircut.
 
 * **Success Response:**
 
-    * **Code:** 200 OK  
+    * **Code:** 200 OK
 
 * **Error Response:**
 
@@ -1156,7 +1202,7 @@ Update json data about appointment and timeslot.
 
 * **Success Response:**
 
-    * **Code:** 200 OK  
+    * **Code:** 200 OK
 
 * **Error Response:**
 
@@ -1497,11 +1543,11 @@ Save a single role in the data base.
    None
 
 * **Data Params**
-    
+
 
 ```json
 {
-"name":"Admin"
+  "name":"Admin"
 }
 ```
 

@@ -1,3 +1,52 @@
+/* variables css */
+:root {
+    --site-body-bg: #FFFFFF;
+    /*(bandeau blanc en haut)*/
+    --site-navbar-bg: #D9D9D9;
+    /*(rectangle gris navbar)*/
+    --site-contenu-bg: #F7F7F7;
+    /*	(fond couleur crème) */
 
+    --site-textcolor-primary: #000000;
+    /*(noir)*/
+    --site-textcolor-secondary: #FFFFFF;
+    /*(blanc)*/
+    --site-textcolor-tertiary: #6F6F6F;
 
+    /* --admin-text-primary: 
+ --admin-text-secondary: 
+ --admin-body-bg: # */
 
+    --site-font-family: 'Roboto', sans-serif;
+    --site-font-size: 1rem;
+
+}
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+    line-height: 1.15;
+    /* 1. Correct the line height in all browsers. */
+    -webkit-text-size-adjust: 100%;
+    /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+}
+
+body {
+    font-family: var(--site-font-family);
+    font-size: var(--site-font-size);
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--site-textcolor-primary);
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+}
